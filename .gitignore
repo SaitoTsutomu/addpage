@@ -1,0 +1,7 @@
+dist/
+__pycache__/
+.venv/
+.vscode/
+*.egg-info/
+.python-version
+memo.txt
