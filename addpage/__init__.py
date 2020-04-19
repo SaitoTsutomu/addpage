@@ -8,7 +8,7 @@ from pdfformfiller import PdfFormFiller
 from reportlab.lib.styles import ParagraphStyle
 
 # see pyproject.toml
-__version__ = "0.0.13"
+__version__ = "0.0.4"
 __author__ = "Saito Tsutomu <tsutomu7@hotmail.co.jp>"
 
 

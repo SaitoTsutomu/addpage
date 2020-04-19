@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "addpage"
-version = "0.0.3"
+version = "0.0.4"
 description = "`addpage` is a package for adding page number to PDF file."
 authors = ["SaitoTsutomu <tsutomu7@hotmail.co.jp>"]
-homepage = "https://github.com/SaitoTsutomu/jcal"
+homepage = "https://github.com/SaitoTsutomu/addpage"
 classifiers = [
    "Development Status :: 1 - Planning",
    "License :: OSI Approved :: Python Software Foundation License",
