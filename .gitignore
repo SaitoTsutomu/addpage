@@ -1,6 +1,8 @@
 .DS_Store
-dist/
+.ipynb_checkpoints/
+Untitled.ipynb
 __pycache__/
+dist/
 .venv/
 .vscode/
 *.egg-info/
