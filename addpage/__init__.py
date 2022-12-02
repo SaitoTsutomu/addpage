@@ -4,12 +4,9 @@ from pathlib import Path
 
 import pdfformfiller
 import PyPDF2
+import reportlab.lib.enums
 from pdfformfiller import PdfFormFiller
 from reportlab.lib.styles import ParagraphStyle
-
-# see pyproject.toml
-__version__ = "0.0.4"
-__author__ = "Saito Tsutomu <tsutomu7@hotmail.co.jp>"
 
 
 class FloatObject(PyPDF2.generic.FloatObject):
@@ -50,7 +47,7 @@ def addPage(
         return False
     if not outFile:
         outFile = inFile.with_name("out.pdf")
-    alg = eval("TA_" + alignment.upper())
+    alg = eval("reportlab.lib.enums.TA_" + alignment.upper())
     sty = ParagraphStyle("sty", alignment=alg, fontName=fontName, fontSize=fontSize)
     ff = PdfFormFiller(str(inFile))
     for i in range(ff.pdf.getNumPages()):
@@ -79,9 +76,7 @@ def main():
     parser.add_argument("-k", "--skip", type=int, default=0)
     parser.add_argument("-x", "--margin-x", type=int, default=0)
     parser.add_argument("-y", "--margin-y", type=int, default=48)
-    parser.add_argument(
-        "-a", "--alignment", default="center", choices=["center", "left", "right"]
-    )
+    parser.add_argument("-a", "--alignment", default="center", choices=["center", "left", "right"])
     parser.add_argument("-f", "--format", default="- %d -")
     args = parser.parse_args()
     addPage(
