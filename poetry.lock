@@ -181,12 +181,13 @@ xmp = ["defusedxml"]
 
 [[package]]
 name = "pypdf2"
-version = "1.26.0"
-description = "PDF toolkit"
+version = "1.27.9"
+description = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7"
 files = [
-    {file = "PyPDF2-1.26.0.tar.gz", hash = "sha256:e28f902f2f0a1603ea95ebe21dff311ef09be3d0f0ef29a3e44a932729564385"},
+    {file = "PyPDF2-1.27.9-py3-none-any.whl", hash = "sha256:5e29ffaf2efcfb77c25206e3b8df517a18af84e64ebe1b3a93abac8d01176374"},
+    {file = "PyPDF2-1.27.9.tar.gz", hash = "sha256:5f7937fd94ba387a2a241db8858770e53091d8ffab9922512c0bf48e3f4cc615"},
 ]
 
 [[package]]
@@ -223,4 +224,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "828d41b79f93ff358d28a1d095a60482cff1bfcbfe7cbf643d965de7d6d1a2ee"
+content-hash = "6baa5935689edc1198a0f5ab1329c649c5c247fc9657bc5d021f88b3e1671d6f"
