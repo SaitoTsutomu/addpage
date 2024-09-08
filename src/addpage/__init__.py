@@ -4,7 +4,6 @@ from pathlib import Path
 
 import pdfformfiller
 import PyPDF2
-import reportlab.lib.enums
 from pdfformfiller import PdfFormFiller
 from reportlab.lib.styles import ParagraphStyle
 
