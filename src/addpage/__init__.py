@@ -27,7 +27,7 @@ PyPDF2.generic.FloatObject = FloatObject
 pdfformfiller.__builtins__["xrange"] = range
 
 
-def addPage(
+def addPage(  # noqa: PLR0913, PLR0917
     inFile,
     outFile,
     fontName,
