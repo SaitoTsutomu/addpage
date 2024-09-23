@@ -1,11 +1,16 @@
 import argparse
 import sys
+from importlib.metadata import metadata
 from pathlib import Path
 
 import pdfformfiller
 import PyPDF2
 from pdfformfiller import PdfFormFiller
 from reportlab.lib.styles import ParagraphStyle
+
+_package_metadata = metadata(__package__)
+__version__ = _package_metadata["Version"]
+__author__ = _package_metadata.get("Author-email", "")
 
 
 class FloatObject(PyPDF2.generic.FloatObject):
