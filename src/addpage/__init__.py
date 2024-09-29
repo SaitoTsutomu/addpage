@@ -1,6 +1,6 @@
 import argparse
 from importlib.metadata import metadata
-from logging import INFO, StreamHandler, getLogger
+from logging import INFO, basicConfig, getLogger
 from pathlib import Path
 
 import pdfformfiller
@@ -13,8 +13,6 @@ _package_metadata = metadata(__package__)
 __version__ = _package_metadata["Version"]
 __author__ = _package_metadata.get("Author-email", "")
 logger = getLogger(__name__)
-logger.addHandler(StreamHandler())
-logger.setLevel(INFO)
 
 
 class FloatObject(PyPDF2.generic.FloatObject):
@@ -75,6 +73,7 @@ def addPage(  # noqa: PLR0913, PLR0917
 
 
 def main():
+    basicConfig(level=INFO, format="%(message)s")
     parser = argparse.ArgumentParser(description=addPage.__doc__)
     parser.add_argument("infile", help="input PDF file")
     parser.add_argument("-o", "--outfile")
