@@ -1,16 +1,20 @@
 import argparse
-import sys
 from importlib.metadata import metadata
+from logging import INFO, StreamHandler, getLogger
 from pathlib import Path
 
 import pdfformfiller
 import PyPDF2
+import reportlab.lib.enums  # noqa: F401 # using in eval
 from pdfformfiller import PdfFormFiller
 from reportlab.lib.styles import ParagraphStyle
 
 _package_metadata = metadata(__package__)
 __version__ = _package_metadata["Version"]
 __author__ = _package_metadata.get("Author-email", "")
+logger = getLogger(__name__)
+logger.addHandler(StreamHandler())
+logger.setLevel(INFO)
 
 
 class FloatObject(PyPDF2.generic.FloatObject):
@@ -47,7 +51,7 @@ def addPage(  # noqa: PLR0913, PLR0917
     """Add page number to PDF file."""
     inFile = Path(inFile).resolve()
     if not inFile.exists():
-        print(f"Not found {inFile}", file=sys.stderr)
+        logger.warning("Not found %s", inFile)
         return False
     if not outFile:
         outFile = inFile.with_name("out.pdf")
@@ -66,7 +70,7 @@ def addPage(  # noqa: PLR0913, PLR0917
             sty,
         )
     ff.write(str(outFile))
-    print(f"Output {outFile}")
+    logger.info("Output %s", outFile)
     return True
 
 
