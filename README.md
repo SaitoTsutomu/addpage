@@ -14,7 +14,7 @@ Add page number to PDF file.
 positional arguments:
   infile                input PDF file
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -o OUTFILE, --outfile OUTFILE
   -n FONT_NAME, --font-name FONT_NAME
