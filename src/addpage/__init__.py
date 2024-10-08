@@ -53,7 +53,7 @@ def addPage(  # noqa: PLR0913, PLR0917
         return False
     if not outFile:
         outFile = inFile.with_name("out.pdf")
-    alg = eval("reportlab.lib.enums.TA_" + alignment.upper())
+    alg = eval("reportlab.lib.enums.TA_" + alignment.upper())  # noqa: S307
     sty = ParagraphStyle("sty", alignment=alg, fontName=fontName, fontSize=fontSize)
     ff = PdfFormFiller(str(inFile))
     for i in range(ff.pdf.getNumPages()):
