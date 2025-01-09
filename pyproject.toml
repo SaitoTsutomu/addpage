@@ -10,7 +10,7 @@ classifiers = [
 dependencies = [
   "pdfformfiller>=0.4",
   "pypdf2==1.27.9",
-  "reportlab>=4.2.4",
+  "reportlab>=4.2.5",
 ]
 description = "`addpage` is a package for adding page number to PDF file."
 license = {text = "Apache-2.0"}
